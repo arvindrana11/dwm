@@ -3,6 +3,20 @@ dwm - dynamic window manager
 dwm is an extremely fast, small, and dynamic window manager for X.
 
 
+Patches
+------------
+    - systray
+    - fixborder
+    - cool autostart
+    - attachaside
+    - scratchpad
+    - focus on netactive
+    - inplacerotate
+    - always center
+    - focus master
+    - pertag
+    - cfacts
+
 Requirements
 ------------
 In order to build dwm you need the Xlib header files.
@@ -16,7 +30,7 @@ the /usr/local namespace by default).
 Afterwards enter the following command to build and install dwm (if
 necessary as root):
 
-    make clean install
+    sudo make clean install
 
 
 Running dwm
