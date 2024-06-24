@@ -270,6 +270,8 @@ static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void zoom(const Arg *arg);
 static void autostart_exec(void);
 
+static void focusmaster(const Arg *arg);
+
 /* variables */
 static Systray *systray = NULL;
 static const char broken[] = "broken";
@@ -2702,4 +2704,20 @@ inplacerotate(const Arg *arg)
 	}
 	arrange(selmon);
 	focus(c);
+}
+
+void
+focusmaster(const Arg *arg)
+{
+	Client *c;
+
+	if (selmon->nmaster < 1)
+		return;
+	if (!selmon->sel || (selmon->sel->isfullscreen && lockfullscreen))
+		return;
+
+	c = nexttiled(selmon->clients);
+
+	if (c)
+		focus(c);
 }
